@@ -1,0 +1,4 @@
+firebase_admin
+numpy==1.19.3
+Flask
+flask-wtf==0.14.3

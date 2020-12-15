@@ -1,0 +1,51 @@
+{%  extends 'base.html' %}
+
+{% block body %}
+    <pre style="text-align: center;">
+For this experiment, you will be shown a sentence that has the letters 
+in the word scrambled. For example, you will see "A random sentence" 
+and it could look like "A rndaom stencene". For this example, you will 
+need to type in the box "a random sentence" to get it correct.
+
+You could also see another type of sentence that could have the letter 
+scrambled and the words scrambled. Using the example "A random 
+sentence", you could see the sentence "rndaom stencene a". For this 
+examle, you would need to type "random  sentence a" to get it 
+correct
+    </pre>
+    
+    <p style="margin-bottom: -2%;">Some key things to know:</p>
+    <ul>
+        <li>Capitalization does not matter!
+        <li>Do not use a period at the end of the sentence
+    </ul>
+
+    <div id="start">
+        <form id="container" method = "POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <center style="font-size: 30px;font-weight: bold;">Enter Your Information</center>
+                <hr>
+                <div class="form-group field" style="padding-top: 2%;">
+                    {{ form.first.label(class = "form-control-label") }}
+                    {{ form.first(class = "form-control form-control-lg") }}
+                </div>
+                <div class="form-group field">
+                    {{ form.last.label(class = "form-control-label") }}
+                    {{ form.last(class = "form-control form-control-lg") }}
+                </div>
+                <div class="form-group field">
+                    {{ form.age.label(class = "form-control-label") }}
+                    {{ form.age(class = "form-control form-control-lg") }}
+                </div>
+                <div class="form-group field">
+                    {{ form.sex.label(class = "form-control-label") }}
+                    {{ form.sex(class = "form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group" style="padding-top:10%;">
+                {{ form.submit(class = "btn btn-outline-info") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

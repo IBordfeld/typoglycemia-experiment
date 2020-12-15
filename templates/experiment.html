@@ -1,0 +1,26 @@
+{%  extends 'base.html' %}
+
+{% block head %} 
+<h1 id = "ExperimentTitle">Type the sentence below</h1>
+{% endblock%}
+
+
+{% block body %} 
+<p style="text-align: center;">
+    {{ sentence }}
+</p>
+<div>
+    <form id="container" method = "POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <div class="form-group" style="height: 75px;">
+                <br>{{ form.answer.label(class = "form-control-label") }}
+                    {{ form.answer(class = "form-control form-control-lg") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class = "btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock%}
